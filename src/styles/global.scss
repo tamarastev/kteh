@@ -1,0 +1,50 @@
+@use "./variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+  background: $color-bg-page;
+  color: $color-text;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hs-container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 1rem;
+  }
+}
+
+.hs-page {
+  flex: 1;
+}
+
+.hs-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
