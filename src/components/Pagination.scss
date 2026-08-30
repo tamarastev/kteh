@@ -1,0 +1,35 @@
+@use "../styles/variables" as *;
+
+.hs-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 2rem 0;
+
+  button {
+    min-width: 36px;
+    height: 36px;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border;
+    background: $color-white;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    color: $color-text;
+
+    &:hover:not(:disabled) {
+      border-color: $color-navy;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__active {
+    background: $color-navy !important;
+    color: #fff !important;
+    border-color: $color-navy !important;
+  }
+}

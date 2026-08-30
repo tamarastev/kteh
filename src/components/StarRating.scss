@@ -1,0 +1,14 @@
+.hs-stars {
+  display: inline-flex;
+  gap: 2px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+
+  &__on {
+    color: #f5a623;
+  }
+
+  &__off {
+    color: #d9dce3;
+  }
+}
