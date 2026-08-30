@@ -1,0 +1,145 @@
+@use "../styles/variables" as *;
+
+.hs-profile {
+  position: relative;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: url("https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1600")
+    center/cover no-repeat;
+
+  &__wrap {
+    width: 100%;
+  }
+
+  &__card {
+    background: $color-white;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-elevated;
+    padding: 1.75rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    h2 {
+      margin: 0;
+    }
+
+    span {
+      color: $color-text-muted;
+      font-size: 0.85rem;
+    }
+  }
+
+  &__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: $color-navy;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  &__actions {
+    margin-left: auto;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 1.5rem;
+    margin-top: 1.75rem;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__info {
+    background: $color-bg-light;
+    border-radius: $radius-md;
+    padding: 1rem 1.25rem;
+
+    h3 {
+      margin-top: 0;
+      font-size: 1rem;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__label {
+    font-size: 0.72rem;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    button {
+      text-align: left;
+      padding: 0.7rem 0.9rem;
+      border-radius: $radius-sm;
+      border: 1px solid $color-border;
+      background: $color-white;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      color: $color-navy;
+    }
+  }
+
+  &__menu-item--active {
+    background: $color-navy !important;
+    color: #fff !important;
+  }
+
+  &__tab-content {
+    margin-top: 0.5rem;
+    padding: 0.9rem;
+    background: $color-bg-light;
+    border-radius: $radius-sm;
+    font-size: 0.88rem;
+    color: $color-text;
+  }
+
+  &__bookings {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  &__edit-form {
+    margin-top: 1.5rem;
+    max-width: 360px;
+  }
+}
