@@ -1,0 +1,114 @@
+@use "../styles/variables" as *;
+
+.hs-properties {
+  padding: 2rem 1.5rem 3rem;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  &__empty {
+    color: $color-text-muted;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+.hs-filters {
+  background: $color-navy;
+  border-radius: $radius-md;
+  padding: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+  margin-bottom: 1.75rem;
+
+  &__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1 1 150px;
+
+    label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+    }
+
+    input,
+    select {
+      padding: 0.6rem 0.7rem;
+      border-radius: $radius-sm;
+      border: none;
+      font-family: inherit;
+      font-size: 0.85rem;
+    }
+
+    &--where {
+      flex: 2 1 220px;
+    }
+  }
+
+  &__suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    color: $color-text;
+    border-radius: $radius-sm;
+    box-shadow: $shadow-elevated;
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0.25rem 0;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 10;
+
+    li {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.82rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: $color-text-muted;
+
+      svg {
+        flex-shrink: 0;
+        color: $color-navy;
+      }
+
+      &:hover {
+        background: $color-bg-light;
+      }
+    }
+  }
+
+  &__loading {
+    color: $color-text-muted;
+    cursor: default !important;
+  }
+
+  &__search {
+    background: #fff;
+    color: $color-navy;
+    border: none;
+    border-radius: $radius-sm;
+    padding: 0.65rem 1.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    flex: 1 1 100%;
+    max-width: 220px;
+    margin: 0 auto;
+
+    &:hover {
+      background: $color-bg-light;
+    }
+  }
+}
