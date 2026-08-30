@@ -1,0 +1,149 @@
+@use "../styles/variables" as *;
+
+.hs-navbar {
+  background: $color-white;
+  border-bottom: 1px solid $color-border;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    height: 64px;
+    width: 100%;
+    padding: 0 2rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__logo {
+    font-weight: 700;
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+    color: $color-text;
+    white-space: nowrap;
+  }
+
+  &__phone {
+    color: $color-text-muted;
+    font-size: 0.85rem;
+    white-space: nowrap;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  &__search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: $color-bg-light;
+    border-radius: $radius-md;
+    padding: 0.5rem 0.9rem;
+    max-width: 680px;
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-size: 0.9rem;
+      font-style: italic;
+      font-family: inherit;
+
+      &::placeholder {
+        font-style: italic;
+      }
+    }
+  }
+
+  &__search-icon {
+    color: $color-text-muted;
+    flex-shrink: 0;
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    span {
+      display: block;
+      height: 2px;
+      background: $color-navy;
+      border-radius: 2px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      display: flex;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    white-space: nowrap;
+  }
+
+  &__link {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: $color-text;
+    padding: 0.35rem 0;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      color: $color-navy;
+    }
+
+    &--active {
+      color: $color-navy;
+      border-bottom-color: $color-navy;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    &__search {
+      display: none;
+    }
+
+    &__links {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: $color-white;
+      border-bottom: 1px solid $color-border;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 0.5rem 1.5rem 1rem;
+
+      &--open {
+        display: flex;
+      }
+    }
+
+    &__link {
+      width: 100%;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+}

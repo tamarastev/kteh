@@ -1,0 +1,79 @@
+@use "../styles/variables" as *;
+
+.hs-footer {
+  background: $color-navy-dark;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 3rem;
+
+  .hs-page:has(> .hs-auth) + &,
+  .hs-page:has(> .hs-profile) + & {
+    margin-top: 0;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 1.5rem;
+    padding: 2.25rem 1.5rem 1.5rem;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.55);
+      max-width: 260px;
+    }
+  }
+
+  &__logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    font-size: 0.85rem;
+
+    a {
+      color: rgba(255, 255, 255, 0.75);
+
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 0.15rem;
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    font-size: 0.78rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.55);
+  }
+}
