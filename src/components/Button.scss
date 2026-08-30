@@ -1,0 +1,72 @@
+@use "../styles/variables" as *;
+
+.hs-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: $radius-md;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.05s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba($color-navy, 0.45);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background: $color-navy;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: $color-navy-light;
+      box-shadow: $shadow-card;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: $color-navy;
+    border-color: $color-navy;
+
+    &:hover:not(:disabled) {
+      background: rgba($color-navy, 0.06);
+    }
+  }
+
+  &--danger {
+    background: transparent;
+    color: $color-danger;
+
+    &:hover:not(:disabled) {
+      text-decoration: underline;
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $color-navy;
+
+    &:hover:not(:disabled) {
+      background: rgba($color-navy, 0.06);
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+}

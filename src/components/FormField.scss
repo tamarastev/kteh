@@ -1,0 +1,41 @@
+@use "../styles/variables" as *;
+
+.hs-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  text-align: left;
+
+  label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  &__icon {
+    display: inline-flex;
+    vertical-align: middle;
+    color: $color-text-muted;
+  }
+
+  input {
+    padding: 0.7rem 0.85rem;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: #fff;
+
+    &:focus {
+      outline: none;
+      border-color: $color-navy;
+      box-shadow: 0 0 0 3px rgba($color-navy, 0.12);
+    }
+  }
+
+  &__error {
+    color: $color-danger;
+    font-size: 0.78rem;
+  }
+}
